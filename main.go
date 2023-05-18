@@ -1,10 +1,16 @@
 package main
 
 import (
+	"libraryapi/initializers"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
 )
+
+func init(){
+	initializers.ConnectDatabase("data/books.db")
+	initializers.SyncDatabase()
+}
 
 func main(){
 	// Initializing the server
