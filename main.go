@@ -1,6 +1,7 @@
 package main
 
 import (
+	"libraryapi/controllers"
 	"libraryapi/initializers"
 	"net/http"
 
@@ -21,6 +22,8 @@ func main(){
 			"message": "Pong!",
 		})
 	})
+
+	r.POST("/create", controllers.CreateBook)
 
 	r.Run()
 }

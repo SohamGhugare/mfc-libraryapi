@@ -1,9 +1,12 @@
 package database
 
-import "libraryapi/models"
+import (
+	"libraryapi/initializers"
+	"libraryapi/models"
+)
 
+// Creating a new book in database
 func CreateBook(book *models.Book) error {
-	// Creating a new book in database
-	
-	return nil
+	tx := initializers.DB.Create(book)
+	return tx.Error
 }
