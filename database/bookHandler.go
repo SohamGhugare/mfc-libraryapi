@@ -12,7 +12,7 @@ func CreateBook(book *models.Book) error {
 }
 
 // Fetching all users
-func FetchAllBooks(books []*models.Book) error {
+func FetchAllBooks(books *[]models.Book) error {
 	tx := initializers.DB.Find(books)
 	return tx.Error
 }
